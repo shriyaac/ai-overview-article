@@ -1,3 +1,342 @@
-   <!doctype html>
-   <html><head><meta charset="utf-8"><title>AI Overview Article</title></head>
-   <body><h1>Coming soon</h1></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When the Answer Replaces the Article</title>
+<meta name="description" content="AI summaries are making news easier to access. But as readers get used to answers without clicks, the future of the journalism behind those answers becomes less certain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #121212;
+    --body: #2a2a2a;
+    --muted: #5f5f5f;
+    --rule: #dcdcdc;
+    --paper: #ffffff;
+    --accent: #0f6e6e;
+    --serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+    --sans: "Libre Franklin", "Helvetica Neue", Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  html { color-scheme: light; scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--serif);
+    font-size: 20px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-underline-offset: 2px; }
+  a:hover { color: #0a4f4f; }
+
+  /* Top bar */
+  .topbar {
+    border-bottom: 1px solid var(--ink);
+    padding: 14px 16px;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+
+  /* Header */
+  header.article-head {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 56px 20px 28px;
+    text-align: center;
+  }
+  .kicker {
+    font-family: var(--sans);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 18px;
+  }
+  h1 {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: clamp(38px, 6vw, 58px);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0 0 20px;
+  }
+  .standfirst {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.4vw, 23px);
+    line-height: 1.45;
+    color: #3d3d3d;
+    margin: 0 auto 26px;
+    max-width: 680px;
+  }
+  .byline {
+    font-family: var(--sans);
+    font-size: 14px;
+    color: var(--muted);
+    margin: 0;
+  }
+  .byline strong { color: var(--ink); font-weight: 600; }
+
+  /* Figures */
+  figure { margin: 40px auto; }
+  figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid #ececec;
+  }
+  figcaption {
+    font-family: var(--sans);
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+  figcaption .credit { color: #8a8a8a; }
+  .hero { max-width: 1100px; padding: 0 20px; margin-top: 8px; }
+  .wide { max-width: 960px; padding: 0 20px; }
+
+  /* Body */
+  main { padding-bottom: 40px; }
+  .prose {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .prose p { margin: 0 0 1.25em; }
+  .prose h2 {
+    font-family: var(--sans);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--ink);
+    margin: 2.2em 0 0.8em;
+  }
+  .dropcap::first-letter {
+    float: left;
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 4.1em;
+    line-height: 0.82;
+    padding: 6px 10px 0 0;
+    color: var(--ink);
+  }
+  .pull {
+    margin: 2em 0;
+    padding: 22px 0;
+    border-top: 2px solid var(--ink);
+    border-bottom: 1px solid var(--rule);
+    font-family: var(--serif);
+    font-size: 28px;
+    line-height: 1.3;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: center;
+  }
+  .closer {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--ink);
+    text-align: center;
+    margin: 1.8em 0 0;
+  }
+  hr.end {
+    width: 60px;
+    border: 0;
+    border-top: 2px solid var(--ink);
+    margin: 48px auto;
+  }
+
+  /* Sources */
+  .sources {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: var(--sans);
+  }
+  .sources h2 {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 16px;
+  }
+  .sources ol { margin: 0; padding-left: 22px; }
+  .sources li {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #3d3d3d;
+    margin-bottom: 12px;
+  }
+
+  footer {
+    margin-top: 56px;
+    border-top: 1px solid var(--rule);
+    padding: 24px 20px 40px;
+    text-align: center;
+    font-family: var(--sans);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 18px; }
+    header.article-head { padding-top: 36px; text-align: left; }
+    .standfirst { margin-left: 0; }
+    .prose h2 { font-size: 21px; }
+    .pull { font-size: 23px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" id="top">Genre Translation Feature</div>
+
+<header class="article-head">
+  <p class="kicker">AI and the News</p>
+  <h1>When the Answer Replaces the Article</h1>
+  <p class="standfirst">AI summaries are making news easier to access. But as readers get used to answers without clicks, the future of the journalism behind those answers becomes less certain.</p>
+  <p class="byline">By <strong>[Your Name]</strong> · November 2026</p>
+</header>
+
+<figure class="hero">
+  <img src="images/hero.png" alt="Illustration of a smartphone showing an AI-generated search summary, held in front of an open newspaper article that it partly covers.">
+  <figcaption>An AI-generated summary can deliver the answer before a reader ever reaches the article behind it. <span class="credit">Illustration by [Your Name]</span></figcaption>
+</figure>
+
+<main>
+  <article class="prose">
+
+    <h2>The news, without the reading</h2>
+
+    <p class="dropcap">You search for a developing story. Google provides a summary, highlights a few details, and links to its sources. Within seconds, you have a general idea of what happened.</p>
+
+    <p>Do you open the article?</p>
+
+    <p>For many searches, the answer is no. And increasingly, search engines are designed to make that choice easier. Google’s AI Overviews place AI-generated summaries above traditional search results, giving users an immediate response without requiring them to visit a news website.</p>
+
+    <p>The appeal is obvious. Readers save time, avoid sorting through multiple links, and get a quick explanation of unfamiliar topics. For someone checking a basic fact, that may be all they need.</p>
+
+    <p>But news is not always a simple question with a simple answer. Behind a headline may be months of investigation, interviews, documents, and editorial decisions. A short summary can communicate the result without necessarily conveying the reporting that produced it.</p>
+
+    <p>The question is not just whether people are reading less. It is what happens when the answer becomes easier to access than the journalism behind it.</p>
+
+    <h2>When the click disappears</h2>
+
+    <p>A search that ends without a visit to another website is known as a <em>zero-click search</em>. It is not a new behavior. Search snippets, maps, calculators, and knowledge panels have answered questions directly for years. AI summaries, however, introduce a more substantial response: instead of a few extracted details, users may receive an organized explanation of an entire topic.</p>
+
+    <p>A 2025 analysis by <a href="#source-6">Press Gazette</a>, using Similarweb data, found that the effect varied considerably across publishers. The New York Times, for example, had a 25.2% zero-click rate among its top keywords that triggered AI Overviews, compared with 40.1% across all its top keywords. But only six of its top 100 keywords triggered an AI Overview, making that comparison difficult to generalize.</p>
+  </article>
+
+  <figure class="wide">
+    <img src="images/zero-click-chart.png" alt="Grouped bar chart of May 2025 zero-click rates. Keywords triggering an AI Overview versus all top keywords: Yahoo 60.3% and 61.3%; New York Times 25.2% and 40.1%; CNN 62.9% and 53.1%; Fox News 63.4% and 56.9%; MSN 74.0% and 67.7%.">
+    <figcaption><strong>Zero-click rates for selected news sites, May 2025.</strong> For most of these publishers, searches that triggered an AI Overview ended without a click more often than their searches overall. The New York Times was an exception, but only 6 of its top 100 keywords triggered an AI Overview. <span class="credit">Source: Press Gazette analysis of Similarweb data (Tobitt, 2025).</span></figcaption>
+  </figure>
+
+  <article class="prose">
+    <p>The New York Times result is a useful reminder that AI Overviews do not explain every zero-click search. The kinds of information people search for, the features Google displays, and the publishers involved all matter.</p>
+
+    <p>Still, there is evidence that AI Overviews can reduce visits to original sources. In a 2026 field experiment, researchers <a href="#source-3">Saharsh Agarwal and Ananya Sen</a> found that, when an AI Overview appeared, outbound organic clicks decreased by 39.8% and zero-click searches increased by 34.5%. The findings suggest that the summaries can change whether users leave the search page, even when the original sources remain available.</p>
+
+    <p>The difference between having access to an article and choosing to read it may be becoming increasingly important.</p>
+
+    <h2>A gateway, or a substitute?</h2>
+
+    <p>Not every summary replaces the article. Sometimes it does the opposite.</p>
+
+    <p>Researchers <a href="#source-1">Paulo Couraceiro and Pedro Caldeira Pais</a> describe a phenomenon they call <em>news sufficiency</em>: a summary can provide enough information to satisfy someone’s immediate curiosity, reducing the incentive to seek out the full article. Their study examined 72 news-related queries across ChatGPT, Gemini, and Google Search. The platforms differed in how they presented sources and context, but the central concern was that a condensed response could feel complete even when important details were missing.</p>
+  </article>
+
+  <figure class="wide">
+    <img src="images/pathways.png" alt="Diagram of two paths from an AI summary. In one, the question is answered and there is no click. In the other, the summary raises more questions and the reader goes on to the original reporting.">
+    <figcaption><strong>Two ways a search can end.</strong> A summary can satisfy a reader’s question or prompt them to look further. <span class="credit">Graphic by [Your Name]</span></figcaption>
+  </figure>
+
+  <article class="prose">
+    <p>Consider the difference between searching for the result of an election and searching for why a candidate won. A quick factual answer may be enough for the first query. The second may require reporting on voter concerns, campaign decisions, historical context, and competing explanations.</p>
+
+    <p>The information a reader needs changes the value of the summary.</p>
+
+    <p>Other research suggests that summaries can also encourage further reading. In an experiment involving Chinese mobile news readers, <a href="#source-2">Fan, Liu, and Huang</a> found that 81.9% of participants clicked through to the full article after viewing an AI-generated summary. Their findings also showed that reading the full article improved comprehension, largely eliminating the disadvantage associated with reading only the summary.</p>
+
+    <p>The <a href="#source-5">Reuters Institute’s 2026 Digital News Report</a> offers another perspective. Among people who use AI chatbots for news, 42% said they always or often click through to original sources. Readers cited wanting to verify information and learn more about the source, as well as seeking additional detail. This is self-reported behavior and concerns standalone AI chatbots rather than Google AI Overviews, but it shows that AI-assisted news consumption does not necessarily end with the summary.</p>
+
+    <p>Together, these findings complicate the idea that summaries automatically replace journalism. They can serve as a stopping point, but they can also be an introduction.</p>
+
+    <p>The difference may depend on what readers are looking for, how complete the summary seems, and whether it gives them a reason to investigate further.</p>
+
+    <h2>What happens to the reporting behind the answer?</h2>
+
+    <p>The consequences extend beyond the number of visitors to a news website.</p>
+
+    <p>Original journalism requires resources. Investigative reporting can involve months of work, travel, legal review, document analysis, and interviews. Local reporting requires journalists who attend public meetings, follow school boards, investigate housing decisions, and hold local officials accountable.</p>
+
+    <p>Publishers have traditionally supported this work through a combination of advertising, subscriptions, and audience traffic. If readers increasingly receive information without visiting the sources, publishers may lose opportunities to earn revenue and build relationships with their audiences.</p>
+
+    <p>That does not mean every missed click eliminates funding for a story. Nor does it mean AI summaries alone will determine the future of news. But a business model built around attracting readers becomes harder to sustain when platforms can satisfy those readers without sending them to the publisher.</p>
+
+    <p>The concern is not simply that newspapers might become less profitable. It is that financial pressure could affect which stories get reported, how much time journalists can spend investigating them, and whether smaller outlets can afford to keep covering their communities.</p>
+  </article>
+
+  <figure class="wide">
+    <img src="images/reporting-chain.png" alt="Four-step chain: original reporting requires journalists, time and resources; it is paid for by publisher revenue; if readers stop clicking through, referral traffic declines; that could lead to pressure on future reporting. The last two steps are labeled as potential consequences.">
+    <figcaption><strong>The reporting behind the answer.</strong> The last two steps are potential consequences, not guaranteed outcomes. <span class="credit">Graphic by [Your Name]</span></figcaption>
+  </figure>
+
+  <article class="prose">
+    <p>There is also a question of what readers actually receive when they rely on summaries. A summary may accurately convey the central point while leaving out the evidence, qualifications, or perspectives that give the story meaning.</p>
+
+    <p>A 2026 study by <a href="#source-4">Xu, Iqbal, and Montgomery</a> examined more than 55,000 queries and evaluated the claims made in Google AI Overviews. The researchers found that 11% of the claims they checked were unsupported by the cited pages. They also found that source credibility and the accuracy of individual claims were not necessarily the same thing.</p>
+
+    <p>A link to a credible source does not automatically mean every statement in a summary is supported by that source. And even when a summary is accurate, it may leave out details that matter.</p>
+
+    <h2>The answer is not the whole story</h2>
+
+    <p>AI summaries offer a real benefit. They can make information more accessible, help readers navigate unfamiliar subjects, and provide a useful starting point for understanding the news. Asking people to abandon them entirely would ignore why they have become popular in the first place.</p>
+
+    <p class="pull">But convenience should not be confused with completeness.</p>
+
+    <p>A summary can tell us what happened. Original reporting can show us how it happened, why it matters, who is affected, and what remains uncertain. Those distinctions are especially important when the subject involves public policy, elections, international conflict, or decisions that shape our everyday lives.</p>
+
+    <p>Readers do not need to open every article they encounter. But they should recognize when a quick answer is enough and when a story deserves more attention. Platforms, meanwhile, should consider how the information they provide affects the publishers whose reporting makes those answers possible.</p>
+
+    <p>The future of news may involve more summaries, more AI, and fewer traditional search clicks. The challenge is ensuring that easier access to information does not come at the expense of the original reporting that makes that information worth having.</p>
+
+    <p class="closer">Because getting an answer is not always the same as understanding the story.</p>
+  </article>
+
+  <hr class="end">
+
+  <section class="sources" aria-labelledby="sources-title">
+    <h2 id="sources-title">Sources and further reading</h2>
+    <ol>
+      <li id="source-1">Couraceiro, Paulo, and Pedro Caldeira Pais. “News Sufficiency: How Generative AI Summaries Reduce News Consumption in Zero-Click Searches.” <em>Journalism and Media</em>, 2026. <a href="https://www.mdpi.com/2673-5172/7/3/152">Read the study</a>.</li>
+      <li id="source-2">Fan, Liu, and Huang. “Skim or Swim? Investigating AI-Generated Summaries, Trust, and Comprehension in Chinese Mobile Reading.” 2026. <a href="https://doi.org/10.1080/10447318.2025.2574513">Read the study</a>.</li>
+      <li id="source-3">Agarwal, Saharsh, and Ananya Sen. “The Impact of Google AI Overviews on Publisher Traffic and User Experience: Evidence from a Field Experiment.” 2026. <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6513059">Read the paper</a>.</li>
+      <li id="source-4">Xu, Haofei, Umar Iqbal, and Jacob M. Montgomery. “Measuring Google AI Overviews: Activation, Source Quality, Claim Fidelity, and Publisher Impact.” 2026. <a href="https://arxiv.org/abs/2605.14021">Read the study</a>.</li>
+      <li id="source-5">Arguedas, Amy Ross. “Emerging Uses of AI Chatbots for News and What It Means for Journalism.” <em>Reuters Institute Digital News Report</em>, 2026. <a href="https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2026/emerging-uses-ai-chatbots-news-and-what-it-means-journalism">Read the report</a>.</li>
+      <li id="source-6">Tobitt, Charlotte. “How Google AI Overviews Is Fuelling Zero-Click Searches for Top Publishers.” <em>Press Gazette</em>, 2025. <a href="https://pressgazette.co.uk/media-audience-and-business-data/media_metrics/how-google-ai-overviews-is-fuelling-zero-click-searches-for-top-publishers/">Read the analysis</a>.</li>
+      <li id="source-7">Luo, Zaichen, et al. “AI-Generated News Summary: Reshaping Reader Engagement on News Platforms.” <em>Omega</em>, 2026. <a href="https://doi.org/10.1016/j.omega.2026.103583">Read the article</a>.</li>
+    </ol>
+  </section>
+</main>
+
+<footer>
+  <p>[Your Name] · Genre Translation Feature · 2026</p>
+  <p><a href="#top">Back to top</a></p>
+</footer>
+
+</body>
+</html>
